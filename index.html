@@ -15,6 +15,13 @@ scroll-behavior:smooth;
 
 body{
 background:#f4f6f9;
+color:black;
+transition:0.3s;
+}
+
+body.dark{
+background:#121212;
+color:white;
 }
 
 header{
@@ -30,7 +37,8 @@ z-index:1000;
 nav{
 display:flex;
 justify-content:center;
-gap:30px;
+gap:25px;
+align-items:center;
 }
 
 nav a{
@@ -41,6 +49,11 @@ font-weight:bold;
 
 nav a:hover{
 color:#00b4d8;
+}
+
+nav button{
+padding:5px 10px;
+cursor:pointer;
 }
 
 section{
@@ -57,24 +70,26 @@ flex-direction:column;
 justify-content:center;
 }
 
-h1{
-font-size:40px;
-margin-bottom:20px;
-}
-
 .card{
 background:white;
+color:black;
 padding:30px;
 margin:20px auto;
 width:80%;
 max-width:800px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
 border-radius:10px;
+transition:0.3s;
+}
+
+body.dark .card{
+background:#1e1e1e;
+color:white;
 }
 
 footer{
-background:#0d1b2a;
-color:white;
+background:#000;
+color:#ccc;
 padding:20px;
 text-align:center;
 }
@@ -89,20 +104,21 @@ text-align:center;
 <a href="#about">About</a>
 <a href="#machines">Machines</a>
 <a href="#modules">Modules</a>
-<a href="#contact">Contact</a>
+<a href="#process">Process</a>
+<a href="#contact">Team</a>
+<button onclick="toggleMode()">🌙</button>
 </nav>
 </header>
 
 <section id="home" class="home">
 <h1>Konkan Tools Pvt. Ltd.</h1>
-<p>CNC Machine Management System – Academic Project</p>
-
+<p>CNC Machine Management System</p>
 </section>
 
 <section id="about">
 <div class="card">
 <h2>About Company</h2>
-<p>Konkan Tools Pvt. Ltd. is a precision engineering company specializing in CNC and VMC machining operations.</p>
+<p>This project represents the working structure of a CNC machine management system used in precision manufacturing industries.</p>
 </div>
 </section>
 
@@ -110,8 +126,7 @@ text-align:center;
 <div class="card">
 <h2>Machine Infrastructure</h2>
 <p>2 CNC Machines<br>6 VMC Machines<br>Wire Cut Jobs for Medical Applications</p>
-  <img src="cnc.jpg" width="350" style="margin-top:15px;">
-
+<img src="cnc.jpg" width="350" style="margin-top:15px;">
 </div>
 </section>
 
@@ -122,16 +137,37 @@ text-align:center;
 </div>
 </section>
 
+<section id="process">
+<div class="card">
+<h2>CNC Machining Process</h2>
+<ul style="text-align:left; margin-top:15px;">
+<li>Part design is created using CAD software.</li>
+<li>G-code program is generated.</li>
+<li>Raw material is fixed on machine table.</li>
+<li>Cutting tool removes unwanted material.</li>
+<li>Final component is inspected for accuracy.</li>
+</ul>
+</div>
+</section>
+
 <section id="contact">
 <div class="card">
-<h2>Project Details</h2>
-<p>SY BCS – Software Engineering Mini Project</p>
+<h2>Project Team</h2>
+<p>Yash Sonawane</p>
+<p>SY BCS</p>
+<p>Your College Name</p>
 </div>
 </section>
 
 <footer>
 © 2026 Konkan Tools Pvt. Ltd.
 </footer>
+
+<script>
+function toggleMode(){
+document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
